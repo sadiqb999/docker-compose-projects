@@ -8,18 +8,6 @@ Project structure:
 └── README.md
 ```
 
-[_compose.yaml_](compose.yaml)
-```
-services:
- minecraft:
-   image: itzg/minecraft-server
-   ports:
-     - "25565:25565"
-    ...
-  volumes:
-     - "~/minecraft_data:/data"
-```
-
 When deploying this setup, docker compose maps the Minecraft server port 25565 to
 the same port of the host as specified in the compose file. The Minecraft client application can connect to this port directly.
 This example maps the Minecraft data folder holding all game storage to ~/minecraft_data on the host.
@@ -61,13 +49,10 @@ minecraft_1  | [15:06:39] [RCON Listener #1/INFO]: RCON running on 0.0.0.0:25575
 ```
 
 Once it is initialized, run your Minecraft application, hit "Play", then "Multiplayer" and "Add server"
-![add server](screenshots/click-add-server.png)
 
- Specify your new server IP : localhost:25565
- ![server configuration](screenshots/add-server-config.png)
+Specify your new server IP : localhost:25565
 
- You can then start playing
- ![ready to play](screenshots/ready-to-play.png)
+You can then start playing
 
 Stop and remove the containers
 
